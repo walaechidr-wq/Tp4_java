@@ -9,7 +9,7 @@ class Bibliotheque {
             documents.add(d);
         }
 
-        // 🔍 Rechercher par titre ou auteur
+        
         public void rechercher(String motCle) {
             for (Document d : documents) {
                 if (d.titre.toLowerCase().contains(motCle.toLowerCase()) ||
@@ -21,7 +21,7 @@ class Bibliotheque {
             }
         }
 
-        // 📂 Filtrer disponibles
+       
         public void afficherDisponibles() {
             for (Document d : documents) {
                 if (d.disponible) {
@@ -30,7 +30,7 @@ class Bibliotheque {
             }
         }
 
-        // ⭐ Document le plus emprunté
+       
         public Document plusEmprunte() {
             if (documents.isEmpty()) return null;
 
@@ -44,7 +44,6 @@ class Bibliotheque {
             return max;
         }
 
-        // ⚠️ Pénalité simple
         public double calculerPenalite(int joursRetard) {
             double penaliteParJour = 2.0; // 2€ / jour
             return joursRetard * penaliteParJour;
